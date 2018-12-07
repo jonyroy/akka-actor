@@ -2,7 +2,7 @@ package xyz.jonyroy.main
 
 import akka.actor._
 
-object Hello extends Greeting with App {
+object Hello extends Greeting {
   println(greetingOne)
 }
 
@@ -15,10 +15,9 @@ trait Greeting {
 
 }
 
-
 class TestActor extends Actor {
 
- override def receive: Receive = {
-   case x: String => println("")
- }
+  override def receive: Receive = {
+    case x: String => println("")
+  }
 }
